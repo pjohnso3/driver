@@ -1,4 +1,4 @@
 driver
 ======
 
-very simple workload driver
+A very simple workload driver for testing databases
