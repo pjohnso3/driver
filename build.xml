@@ -1,0 +1,23 @@
+<project name="Driver" default="buildAll">
+
+<property environment="env"/>
+<property name="srcDir"             location="src"/>
+<property name="buildDir"           location="distrib"/>
+<property name="distribDir"         location="distrib"/>
+<property name="version" 			value="1.2."/>
+
+<target name="compile">
+	<delete dir="${buildDir}"/>
+	<mkdir dir="${buildDir}"/>
+	<javac srcdir="${srcDir}" includes="*.java" sourcepath="" deprecation="true" 
+	    includeAntRuntime="false" debug="true" optimize="false" target="1.6" destdir="${buildDir}">
+		<compilerarg line="-Xlint:none -Xmaxerrs 6"/>
+		<classpath>
+			<pathelement location="lib/db_driver/db2jcc4.jar"/>
+		</classpath>
+	</javac>
+</target>
+
+<target name="buildAll" depends="compile"/>
+
+</project>
